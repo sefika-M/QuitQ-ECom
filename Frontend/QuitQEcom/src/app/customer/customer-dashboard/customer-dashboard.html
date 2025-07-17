@@ -1,0 +1,26 @@
+<div class="customer-container">
+  <!-- SEARCH BAR -->
+  <mat-form-field appearance="outline" class="search-box">
+    <mat-label>Search Products</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search by name or category" />
+  </mat-form-field>
+
+  <!-- PRODUCT CARDS -->
+  <div class="card-grid">
+    <mat-card *ngFor="let p of filteredProducts" class="product-card" appearance="outlined">
+      <img mat-card-image [src]="p.imageUrl || '/assets/default-product.jpg'" alt="{{ p.productName }}" class="product-img" />
+      <mat-card-content>
+        <h3>{{ p.productName }}</h3>
+        <p class="price">₹{{ p.price }}</p>
+        <p><strong>Category:</strong> {{ p.category?.catName }}</p>
+        <p><strong>Seller:</strong> {{ p.seller?.companyName }}</p>
+        <p>{{ p.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="addToCart(p)">
+          <mat-icon>add_shopping_cart</mat-icon> Add to Cart
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

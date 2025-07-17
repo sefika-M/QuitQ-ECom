@@ -1,0 +1,68 @@
+<mat-toolbar class="top-toolbar" color="primary">
+  <span class="toolbar-title">Admin Summary</span>
+</mat-toolbar>
+
+<div class="dashboard-container" *ngIf="!loading && summary">
+  <div class="card-grid">
+    <mat-card class="summary-card">
+      <h3>Total Users</h3>
+      <p>{{ summary.totalUsers }}</p>
+    </mat-card>
+
+    <mat-card class="summary-card">
+      <h3>Total Sellers</h3>
+      <p>{{ summary.totalSellers }}</p>
+    </mat-card>
+
+    <mat-card class="summary-card">
+      <h3>Total Categories</h3>
+      <p>{{ summary.totalCategories }}</p>
+    </mat-card>
+
+    <mat-card class="summary-card">
+      <h3>Total Products</h3>
+      <p>{{ summary.totalProducts }}</p>
+    </mat-card>
+
+    <mat-card class="summary-card">
+      <h3>Total Orders</h3>
+      <p>{{ summary.totalOrders }}</p>
+    </mat-card>
+
+    <mat-card class="summary-card">
+      <h3>Delivered Orders</h3>
+      <p>{{ summary.deliveredOrders }}</p>
+    </mat-card>
+
+    <mat-card class="summary-card">
+      <h3>Pending Orders</h3>
+      <p>{{ summary.pendingOrders }}</p>
+    </mat-card>
+
+    <mat-card class="summary-card">
+      <h3>Today's Orders</h3>
+      <p>{{ summary.todayOrders }}</p>
+    </mat-card>
+
+    <mat-card class="summary-card highlight-card">
+      <h3>Total Sales</h3>
+      <p>₹{{ summary.totalSales }}</p>
+    </mat-card>
+  </div>
+
+  <mat-card class="sales-chart-card">
+    <h3>Sales in Last 7 Days</h3>
+    <div class="sales-chart">
+      <div class="bar" *ngFor="let day of summary.salesLast7Days">
+        <div class="bar-label">{{ day.date | date: 'MMM d' }}</div>
+        <div class="bar-fill" [style.height.%]="day.totalSales > 0 ? (day.totalSales / summary.totalSales) * 100 : 1">
+          ₹{{ day.totalSales }}
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>
+
+<div class="loading" *ngIf="loading">
+  <mat-spinner diameter="40"></mat-spinner>
+</div>

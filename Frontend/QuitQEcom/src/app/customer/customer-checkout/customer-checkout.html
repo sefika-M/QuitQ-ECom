@@ -1,0 +1,24 @@
+<div class="checkout-container">
+  <mat-card class="checkout-card">
+    <h2 class="checkout-title">Complete Your Order</h2>
+
+    <form (ngSubmit)="placeOrder()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Shipping Address</mat-label>
+        <textarea matInput rows="3" [(ngModel)]="shippingAddress" name="address" placeholder="Enter delivery address" required></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Payment Method</mat-label>
+        <mat-select [(ngModel)]="paymentMode" name="paymentMode" required>
+          <mat-option value="COD">Cash on Delivery</mat-option>
+          <mat-option value="WALLET">Wallet</mat-option>
+          <mat-option value="UPI">UPI</mat-option>
+          <mat-option value="CARD">Card</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="place-btn full-width">Place Order</button>
+    </form>
+  </mat-card>
+</div>

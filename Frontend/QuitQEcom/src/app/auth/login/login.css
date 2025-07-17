@@ -1,0 +1,118 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.login-card {
+  max-width: 420px;
+  margin: 6% auto;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  text-align: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: slideFade 0.6s ease-in-out;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 1.2rem;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 24px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+mat-form-field {
+  font-size: 16px;
+}
+
+.login-btn {
+  background: linear-gradient(90deg, #1976d2 0%, #00b4d8 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 10px;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.12);
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  background: linear-gradient(90deg, #00b4d8 0%, #1976d2 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.ripple::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.error-text {
+  color: #e53935;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.forgot-link {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.forgot-link a {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.forgot-link a:hover {
+  text-decoration: underline;
+}
+
+.snackbar-success {
+  background-color: #4caf50 !important;
+  color: white;
+}
+
+.snackbar-error {
+  background-color: #f44336 !important;
+  color: white;
+}
+
+/* Animation */
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-brand {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1976d2;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}

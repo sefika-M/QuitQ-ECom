@@ -1,0 +1,71 @@
+body, html {
+  margin: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-card {
+  text-align: center;
+  padding: 3rem 3.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  animation: fadeSlideIn 0.7s ease;
+}
+
+.logo-img {
+  width: 100px;
+  margin-bottom: 1.2rem;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1976d2;
+  letter-spacing: 1.5px;
+  margin-bottom: 24px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 10px 24px;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

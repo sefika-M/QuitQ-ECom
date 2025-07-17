@@ -1,0 +1,21 @@
+<mat-card class="login-card" @fadeIn>
+  <div class="brand-title login-brand">QuitQ</div>
+  <h2 class="title">Login</h2>
+  <form (ngSubmit)="loginUser()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="email" name="email" required />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput [(ngModel)]="password" name="password" type="password" required />
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="login-btn full-width">Login</button>
+  </form>
+  <div *ngIf="errorMsg" class="error-text">{{ errorMsg }}</div>
+  <p class="forgot-link">
+    <a routerLink="/register">Don’t have an account? Register</a><br />
+    <a routerLink="/forgot-password">Forgot Password?</a>
+  </p>
+</mat-card>
+

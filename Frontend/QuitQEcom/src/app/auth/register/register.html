@@ -1,0 +1,56 @@
+<mat-card class="register-card" @fadeIn>
+  <div class="brand-title register-brand">QuitQ</div>
+  <h2>Create Your QuitQ Account</h2>
+
+  <form (ngSubmit)="registerUser()" class="register-form">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="user.name" name="name" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="user.email" name="email" type="email" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput [(ngModel)]="user.password" name="password" type="password" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Gender</mat-label>
+      <mat-select [(ngModel)]="user.gender" name="gender" required>
+        <mat-option value="Male">Male</mat-option>
+        <mat-option value="Female">Female</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Contact Number</mat-label>
+      <input matInput [(ngModel)]="user.contactNumber" name="contactNumber" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Address</mat-label>
+      <input matInput [(ngModel)]="user.address" name="address" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Role</mat-label>
+      <mat-select [(ngModel)]="user.role" name="role" required>
+        <mat-option value="CUSTOMER">Customer</mat-option>
+        <mat-option value="SELLER">Seller</mat-option>
+        <mat-option value="ADMIN">Admin</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="user.role === 'SELLER'" appearance="outline" class="full-width">
+      <mat-label>Company Name</mat-label>
+      <input matInput [(ngModel)]="user.companyName" name="companyName" required />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="register-btn full-width">Register</button>
+  </form>
+  <div *ngIf="errorMsg" class="error-text">{{ errorMsg }}</div>
+</mat-card>

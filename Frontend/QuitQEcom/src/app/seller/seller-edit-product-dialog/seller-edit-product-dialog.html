@@ -1,0 +1,40 @@
+<div class="dialog-outer">
+  <form [formGroup]="productForm" (ngSubmit)="updateProduct()" class="dialog-form">
+    <div class="dialog-header">Edit Product</div>
+    <div class="dialog-form-content">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Product Name</mat-label>
+        <input matInput formControlName="productName" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" formControlName="price" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Stock</mat-label>
+        <input matInput type="number" formControlName="stock" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="catId">
+          <mat-option *ngFor="let cat of categories" [value]="cat.catId">{{ cat.catName }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description" rows="2"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Image URL</mat-label>
+        <input matInput formControlName="imageUrl" (input)="previewImage(productForm.value.imageUrl)" />
+      </mat-form-field>
+      <img *ngIf="imagePreview" [src]="imagePreview || '/assets/default-product.jpg'" class="preview-image" alt="Preview" />
+    </div>
+    <div class="dialog-actions">
+      <button mat-button (click)="close()">Cancel</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!productForm.valid">
+        Update
+      </button>
+    </div>
+  </form>
+</div>

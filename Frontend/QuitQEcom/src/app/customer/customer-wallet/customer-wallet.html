@@ -1,0 +1,36 @@
+<div class="wallet-container" @fadeIn>
+  <mat-card class="wallet-card">
+    <h2 class="wallet-title">My Wallet</h2>
+
+    <div class="wallet-balance">
+      <mat-icon>account_balance_wallet</mat-icon>
+      ₹{{ balance }}
+    </div>
+
+    <!-- Recharge Amount -->
+    <mat-form-field appearance="outline" class="recharge-field">
+      <mat-label>Recharge Amount</mat-label>
+      <input matInput type="number" [(ngModel)]="rechargeAmount" min="1" placeholder="Enter amount" />
+    </mat-form-field>
+
+    <!-- Select Payment Method -->
+    <mat-form-field appearance="outline" class="recharge-field">
+      <mat-label>Payment Method</mat-label>
+      <mat-select [(ngModel)]="paymentMethod">
+        <mat-option *ngFor="let method of paymentMethods" [value]="method">
+          {{ method }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="rechargeWallet()" class="wallet-btn">
+      Recharge Wallet
+    </button>
+
+    <button mat-raised-button color="accent" routerLink="/customer" class="wallet-btn">
+  <mat-icon>arrow_back</mat-icon>
+  Back to Dashboard
+</button>
+
+  </mat-card>
+</div>

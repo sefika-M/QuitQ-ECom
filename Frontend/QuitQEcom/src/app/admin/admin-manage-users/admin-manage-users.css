@@ -1,0 +1,58 @@
+.user-card {
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.search-box {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.count {
+  font-size: 14px;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.user-table {
+  width: 100%;
+  font-size: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th.mat-header-cell {
+  background-color: #eceff1;
+  font-weight: bold;
+}
+
+td.mat-cell, th.mat-header-cell {
+  padding: 12px;
+}
+
+tr.mat-row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr.mat-row:hover {
+  background-color: #e3f2fd;
+}
+
+button[mat-icon-button] {
+  transition: transform 0.2s ease;
+}
+
+button[mat-icon-button]:hover {
+  transform: scale(1.1);
+}

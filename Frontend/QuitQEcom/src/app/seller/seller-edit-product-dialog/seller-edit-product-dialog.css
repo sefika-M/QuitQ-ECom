@@ -1,0 +1,115 @@
+.dialog-outer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3vh 0;
+}
+
+.dialog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0 0 0.5rem 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  max-width: 480px;
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.dialog-header {
+  background: #232946;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 1.2rem 2rem 1rem 2rem;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.dialog-form-content {
+  overflow-y: auto;
+  max-height: 56vh;
+  padding: 0 1.5rem 1rem 1.5rem;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  background: inherit;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  border-top: 1px solid #e0e0e0;
+  margin: 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-form-field.mat-focused .mat-form-field-outline {
+  stroke: #232946 !important;
+}
+
+.preview-image {
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-top: 0.7rem;
+  box-shadow: 0 2px 12px rgba(25, 118, 210, 0.10);
+  background: #f7fafc;
+}
+
+button, .mat-raised-button {
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(44, 83, 100, 0.07);
+}
+
+button[mat-raised-button], .mat-raised-button {
+  background: linear-gradient(90deg, #232946 0%, #1976d2 100%) !important;
+  color: #fff !important;
+}
+
+button[mat-raised-button]:hover, .mat-raised-button:hover {
+  background: linear-gradient(90deg, #1976d2 0%, #232946 100%) !important;
+  color: #fff !important;
+  transform: translateY(-2px) scale(1.03);
+}
+
+button[mat-button] {
+  color: #232946;
+}
+
+@media (max-width: 600px) {
+  .dialog-form {
+    padding: 0;
+    max-width: 98vw;
+  }
+  .dialog-form-content {
+    max-height: 48vh;
+    padding: 0 0.5rem 1rem 0.5rem;
+  }
+  .dialog-header {
+    padding: 1rem 1rem 0.7rem 1rem;
+  }
+  .dialog-actions {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+  }
+}

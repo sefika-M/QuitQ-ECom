@@ -1,0 +1,17 @@
+<mat-card class="profile-card" @fadeIn>
+  <h2><mat-icon>account_circle</mat-icon> My Profile</h2>
+  <p class="subtitle">Your personal information</p>
+
+  <div class="info-row"><mat-icon>person</mat-icon> {{ user?.name }}</div>
+  <div class="info-row"><mat-icon>email</mat-icon> {{ user?.email }}</div>
+  <div class="info-row"><mat-icon>phone</mat-icon> {{ user?.contactNumber }}</div>
+  <div class="info-row"><mat-icon>home</mat-icon> {{ user?.address }}</div>
+  <div class="info-row"><mat-icon>badge</mat-icon> Role: {{ user?.role }}</div>
+
+  <div class="wallet-section">
+    <button mat-stroked-button color="primary" (click)="goToWallet()">
+      <mat-icon>account_balance_wallet</mat-icon>
+      View Wallet
+    </button>
+  </div>
+</mat-card>

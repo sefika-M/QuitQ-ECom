@@ -1,0 +1,26 @@
+<header class="app-header">
+  <a class="logo-link brand-text" routerLink="/">
+    <span class="brand-title">QuitQ</span>
+  </a>
+  <nav class="header-nav" *ngIf="isCustomerRoute()">
+    <button mat-button color="accent" (click)="goTo('/customer/orders')">
+      <span class="material-icons">assignment</span> My Orders
+    </button>
+    <button mat-button color="primary" (click)="goTo('/customer/wallet')">
+      <span class="material-icons">account_balance_wallet</span> Wallet
+    </button>
+    <button mat-button color="warn" (click)="goTo('/customer/profile')">
+      <span class="material-icons">person</span> Profile
+    </button>
+    <button mat-icon-button (click)="goTo('/customer/cart')" title="Cart">
+      <span class="material-icons">shopping_cart</span>
+    </button>
+    <span class="wallet" *ngIf="walletBalance() !== null">Wallet: ₹{{ walletBalance() }}</span>
+    <button mat-raised-button color="warn" (click)="logout()">
+      <span class="material-icons">logout</span> Logout
+    </button>
+  </nav>
+  <nav class="header-nav" *ngIf="!isCustomerRoute()">
+    <!-- Add other role navigation here if needed -->
+  </nav>
+</header> 

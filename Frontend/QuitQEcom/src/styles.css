@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Modern global styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: url('https://images.unsplash.com/photo-1528722828814-77b9b83aafb2?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+  background-size: cover;
+  color: #222;
+}
+
+button, .mat-raised-button, .mat-button {
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(44, 83, 100, 0.07);
+}
+
+button:hover, .mat-raised-button:hover, .mat-button:hover {
+  background: #e0f7fa;
+  transform: translateY(-2px) scale(1.03);
+}
+
+input, .mat-input-element {
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #cfd8dc;
+  transition: border 0.2s;
+}
+
+input:focus, .mat-input-element:focus {
+  border-color: #2ec4b6;
+  outline: none;
+}
+
+.mat-card, .main-card, .profile-card, .wallet-card, .cart-card, .checkout-card {
+  background: rgba(255,255,255,0.92) !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #e0e0e0;
+}
+::-webkit-scrollbar-thumb {
+  background: #b2dfdb;
+  border-radius: 8px;
+}
+
+.app-header {
+  background: linear-gradient(90deg, #003049 0%, #2ec4b6 100%);
+}
+
+/* Add a subtle overlay for readability */
+body::before {
+  content: none;
+}
+
+body, #root, app-root {
+  min-height: 100vh;
+}
+
+.no-backdrop {
+  background: transparent !important;
+}
+
+.custom-dialog-container {
+  border-radius: 16px !important;
+  background: #fff !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15) !important;
+  padding: 0 !important;
+}

@@ -1,0 +1,31 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <mat-toolbar class="toolbar admin-toolbar" color="primary">
+      <mat-icon class="admin-icon">admin_panel_settings</mat-icon>
+      <span class="admin-title">QuitQ Admin</span>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="summary" routerLinkActive="active-link">
+        <mat-icon>insights</mat-icon>
+        <span>Summary</span>
+      </a>
+      <a mat-list-item routerLink="users" routerLinkActive="active-link">
+        <mat-icon>group</mat-icon>
+        <span>Users</span>
+      </a>
+      <a mat-list-item routerLink="sellers" routerLinkActive="active-link">
+        <mat-icon>storefront</mat-icon>
+        <span>Sellers</span>
+      </a>
+      <a mat-list-item routerLink="categories" routerLinkActive="active-link">
+        <mat-icon>category</mat-icon>
+        <span>Categories</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="main-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
